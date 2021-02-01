@@ -1,0 +1,9 @@
+CREATE DATABASE rental-app
+
+CREATE TABLE users(
+    user_id INTEGER PRIMARY KEY,
+    name VARCHAR(255)NOT NULL,
+    user_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+)
