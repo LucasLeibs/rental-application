@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-const jwtAuth = require('./jwtAuth')
+const jwtAuth = require('./routes /jwtAuth')
 //middleware 
 app.use(express.json());
 app.use(cors());
@@ -10,6 +10,8 @@ app.use(cors());
 //register and login 
 app.use("/authentication", jwtAuth);
 
+//dashboard route
+app.use("/dashboard", require("./routes /dashboard"))
 
 app.listen(5000, () => {
     console.log("server is running on port 5000")
