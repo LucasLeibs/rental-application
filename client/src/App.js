@@ -1,15 +1,29 @@
 
 import './App.css';
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import Nav from './components/Nav'
-import useDarkMode from './hooks/useDarkMode';
-function App() {
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
+import Home from './components/Home'
+import Login from './components/Login'
 
+function App() {
+const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+  const setAuth = (boolean) => {
+  setIsAuthenticated(boolean)
+  }
   return (
-    <div className="bg-white flex items-center justify-center min-h-screen dark:bg-gray-600">
-      <Nav></Nav>
-    <h1 className="text-blue-600 dark:text-white">React Dark Mode</h1>
-    </div>  
+   <Fragment>
+     <Router>
+       <div>
+       <Switch>
+         <Route exact path="/login" render={props => !isAuthenticated ? <Login {...props} setAuth={setAuth} /> : <Redirect to="/home"/>} />
+         <Route exact path="/home" render={props => isAuthenticated ? <Home {...props} setAuth={setAuth} /> : <Redirect to="/login"/>} />
+       </Switch>
+       </div>
+ 
+     </Router>
+   </Fragment>
   );
 }
 
