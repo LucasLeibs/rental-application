@@ -9,7 +9,7 @@ const authorization = require("../middleware/authorization")
 router.post("/register", validInfo, async (req, res) => {
     try {
         // destructire req body 
-        const { name, user_name, email, password} = req.body;
+        const { first_name, last_name, user_name, email, password} = req.body;
 
         //check if user exists 
         const user = await pool.query("SELECT * FROM users WHERE email = $1", [
@@ -24,8 +24,8 @@ router.post("/register", validInfo, async (req, res) => {
 
         const bcryptPassword = await bcrypt.hash(password, salt)
         //enter the new user inside our database
-        const newUser = await pool.query("INSERT INTO users (name, user_name, email, password) VALUES ($1, $2, $3, $4) RETURNING *",[
-             name, user_name, email, bcryptPassword
+        const newUser = await pool.query("INSERT INTO users (first_name, last_name, user_name, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING *",[
+             first_name, last_name, user_name, email, bcryptPassword
         ]);
         
         //generate jwt token
