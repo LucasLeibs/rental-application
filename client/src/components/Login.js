@@ -15,10 +15,15 @@ export default function Login({ setAuth }) {
     const submitForm = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch('http//:localhost:5000/authentication/login', {
+            const body = {email, password}
+            const response = await fetch('http://localhost:5000/authentication/login', {
                 method: 'POST',
-                headers: {"Content-Type"}
+                headers: {"Content-Type" : "application/json"}, 
+                body: JSON.stringify(body)
             })
+
+            const parseRes = await response.json();
+            console.log(parseRes)
         } catch(err) {
             console.error(err.message)
         }
