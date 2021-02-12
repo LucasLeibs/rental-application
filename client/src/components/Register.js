@@ -24,6 +24,7 @@ const onSubmitForm = async (e) => {
             body: JSON.stringify(body)
         });
         const parseRes = await response.json()
+        console.log(parseRes)
         localStorage.setItem("token", parseRes.token)
         setAuth(true)
     

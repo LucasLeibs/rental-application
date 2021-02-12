@@ -1,6 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
+// import {extendObservable}from 'mobx' 
+// import {observer} from 'mobx-react'
 
 export default function Login({ setAuth }) {
+    const [userInfo, setUserInfo] = useState({ 
+        email: "",
+        password: ""
+    })
+    const {email, password} = userInfo
+    const onChange = (e) => {
+        setUserInfo({...userInfo, [e.target.name]: e.target.value});
+    }
+    
+    const submitForm = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await fetch('http//:localhost:5000/authentication/login', {
+                method: 'POST',
+                headers: {"Content-Type"}
+            })
+        } catch(err) {
+            console.error(err.message)
+        }
+    }
   return (
     <div className="min-h-screen flex items-center justify-center 0bg-gray-5 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900">
       <div className="max-w-md w-full space-y-8">
@@ -23,7 +45,7 @@ export default function Login({ setAuth }) {
             </a>
           </p>
         </div>
-        <form className="mt-8 space-y-6" action="#" method="POST">
+        <form onSubmit={submitForm} className="mt-8 space-y-6" action="#" method="POST">
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
@@ -31,6 +53,8 @@ export default function Login({ setAuth }) {
                 Email address
               </label>
               <input
+                onChange={e => onChange(e)}
+                value = {email}
                 id="email-address"
                 name="email"
                 type="email"
@@ -45,6 +69,8 @@ export default function Login({ setAuth }) {
                 Password
               </label>
               <input
+              onChange={e => onChange(e)}
+              value = {password}
                 id="password"
                 name="password"
                 type="password"
