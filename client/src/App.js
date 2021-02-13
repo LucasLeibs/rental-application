@@ -10,12 +10,40 @@ import {default as Switchy} from "react-switch"
 import useDarkMode from './hooks/useDarkMode'
 
 function App() {
-const [colorTheme, setTheme] = useDarkMode()
+// const [colorTheme, setTheme] = useDarkMode()
 const [isAuthenticated, setIsAuthenticated] = useState(false)
 const [checked, setChecked] = useState(false);
-const handleChange = nextChecked => {
-  setChecked(nextChecked);
-  setTheme(colorTheme);
+
+
+
+const root = window.document.documentElement
+  const lightTheme = "light"
+  const darkTheme = "dark"
+  let theme;
+  
+  if (localStorage) {
+    theme = localStorage.getItem("theme")
+  }
+
+  if (theme === lightTheme || theme === darkTheme) {
+    root.classList.add(theme);
+    
+
+  } else {
+    root.classList.add(lightTheme)
+    
+  }
+const handleChange = () => {
+  if (theme === darkTheme) {
+    root.classList.replace(darkTheme, lightTheme);
+    localStorage.setItem("theme", "light");
+    theme = lightTheme
+    setChecked(true)
+  } else {
+    root.classList.replace(lightTheme, darkTheme)
+    localStorage.setItem("theme", 'dark')
+   setChecked(false)
+  }
 };
 
   const setAuth = (boolean) => {
@@ -29,7 +57,7 @@ const handleChange = nextChecked => {
          <Switchy
          
           onChange={handleChange}
-          checked={checked}
+          checked={localStorage.getItem("theme") === 'dark' ? true : false}
           className="react-switch"
           handleDiameter={32}
           onHandleColor="#A00AEB"
