@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from 'react-router-dom'
 // import {extendObservable}from 'mobx' 
 // import {observer} from 'mobx-react'
 
@@ -42,12 +43,8 @@ export default function Login({ setAuth }) {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-500">
             {"Don't have an account? "}
-            <a
-              href="#"
-              className="font-medium text-indigo-600 hover:text-indigo-100 dark:text-indigo-"
-            >
-              Register
-            </a>
+           
+            <Link  className="font-medium text-indigo-600 hover:text-indigo-100 dark:text-indigo-" to="/register">Register</Link>
           </p>
         </div>
         <form onSubmit={submitForm} className="mt-8 space-y-6" action="#" method="POST">
