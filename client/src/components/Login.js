@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import {Link} from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import {extendObservable}from 'mobx' 
 // import {observer} from 'mobx-react'
 
@@ -24,14 +26,43 @@ export default function Login({ setAuth }) {
             })
 
             const parseRes = await response.json();
+            if (parseRes.token) {
+
             localStorage.setItem("token", parseRes.token)
             setAuth(true)
-        } catch(err) {
+            toast.success('🦄 Wow so easy!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              });
+        
+
+            } else {
+                setAuth(false)
+                toast.error(parseRes)
+              }
+            
+            } catch(err) {
             console.error(err.message)
         }
     }
   return (
     <div className="min-h-screen flex items-center justify-center 0bg-gray-5 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900">
+                <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover={false}
+/>  
       <div className="max-w-md w-full space-y-8">
         <div>
           {/* <img
