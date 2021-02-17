@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Nav from './components/Nav'
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
 import Home from './components/Home'
@@ -14,8 +14,21 @@ function App() {
 const [isAuthenticated, setIsAuthenticated] = useState(false)
 const [checked, setChecked] = useState(false);
 
-
-
+async function isAuth() {
+  try {
+const response = await fetch('http://localhost:5000/authentication/verify', {
+  method: "GET",
+  headers: { token: localStorage.token }
+})
+  const parseRes = await response.json()
+  parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
+  } catch(err) {
+    console.error(err.message)
+  }
+}
+useEffect(() => {
+ isAuth()
+})
 const root = window.document.documentElement
   const lightTheme = "light"
   const darkTheme = "dark"
