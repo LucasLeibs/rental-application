@@ -27,18 +27,13 @@ export default function Login({ setAuth }) {
 
             const parseRes = await response.json();
             if (parseRes.token) {
-
+              console.log(parseRes.token)
             localStorage.setItem("token", parseRes.token)
-            setAuth(true)
-            toast.success('🦄 Wow so easy!', {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              });
+            toast.success('🦄 Wow so easy!')
+
+            setAuth(true);
+          
+           
         
 
             } else {

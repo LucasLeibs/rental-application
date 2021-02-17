@@ -28,6 +28,7 @@ const response = await fetch('http://localhost:5000/authentication/verify', {
 }
 useEffect(() => {
  isAuth()
+ console.log(isAuthenticated)
 })
 const root = window.document.documentElement
   const lightTheme = "light"

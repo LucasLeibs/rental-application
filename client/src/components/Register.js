@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Register({setAuth}) {
 const [userInfo, setUserInfo] = useState({ 
     first_name: "",
@@ -24,9 +27,15 @@ const onSubmitForm = async (e) => {
             body: JSON.stringify(body)
         });
         const parseRes = await response.json()
+        if (parseRes.token) {
         console.log(parseRes)
         localStorage.setItem("token", parseRes.token)
         setAuth(true)
+        toast.success("registered success")
+        } else {
+  setAuth(false)
+  toast.error(parseRes)
+        }
     
     } catch (err) {
         console.error(err.message)
@@ -36,6 +45,17 @@ console.log(userInfo)
     return   (
        
            <div className="min-h-screen flex items-center justify-center 0bg-gray-5 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900">
+                           <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover={false}
+/>  
       <div className="max-w-md w-full space-y-8">
         <div>
           {/* <img
