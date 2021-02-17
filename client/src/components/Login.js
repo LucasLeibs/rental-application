@@ -24,7 +24,8 @@ export default function Login({ setAuth }) {
             })
 
             const parseRes = await response.json();
-            console.log(parseRes)
+            localStorage.setItem("token", parseRes.token)
+            setAuth(true)
         } catch(err) {
             console.error(err.message)
         }
