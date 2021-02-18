@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import logo from '../images/renttru6.png'
 
 export default function Register({setAuth}) {
 const [userInfo, setUserInfo] = useState({ 
@@ -58,18 +59,18 @@ pauseOnHover={false}
 />  
       <div className="max-w-md w-full space-y-8">
         <div>
-          {/* <img
+          <img
             className="mx-auto h-12 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+            src={logo}
             alt="Workflow"
-          /> */}
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+          />
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-indigo-900 dark:text-white">
             Register your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-500">
            
            
-            <Link  className="font-medium text-indigo-600 hover:text-indigo-100 dark:text-indigo-" to="/login">Back to login</Link>
+            <Link  className="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo" to="/login">Back to login</Link>
           </p>
        
         </div>
@@ -183,7 +184,7 @@ pauseOnHover={false}
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-400 hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 {/* <!-- Heroicon name: solid/lock-closed --> */}

@@ -9,6 +9,7 @@ import Register from './components/Register'
 import {default as Switchy} from "react-switch"
 import useDarkMode from './hooks/useDarkMode'
 
+
 function App() {
 // const [colorTheme, setTheme] = useDarkMode()
 const [isAuthenticated, setIsAuthenticated] = useState(false)
