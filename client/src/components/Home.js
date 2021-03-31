@@ -4,6 +4,8 @@ import SearchBar from './SearchBar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import logo from '../images/renttru6.png'
+import home from '../images/renttru7.jpg'
 import {
     geocodeByAddress,
     geocodeByPlaceId,
@@ -59,7 +61,8 @@ export default function Home({setAuth}) {
          setAuth(false)
      }
     return (
-        <div className="static min-h-screen flex items-center justify-center 0bg-gray-5 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:text-white" >
+        <div className="static min-h-screen flex items-center flex-col justify-center bg-gray-900
+         px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:text-white" >
             <ToastContainer
 position="top-center"
 autoClose={5000}
@@ -71,11 +74,22 @@ pauseOnFocusLoss
 draggable
 pauseOnHover={false}
 />  
-          <div className="fixed top-20 min-h-screen ">
+<img
+            className="mx-auto h-12 w-auto m-10"
+            src={logo}
+            alt="Workflow"
+          />
+             <div className="-mb-5 z-20">
       <SearchBar >
 
       </SearchBar>
       </div>
+<div className="w-3/4">
+<img src={home}></img>
+</div>
+
+
+       
             <h1>Homfe Pidiage</h1>
             <button onClick= {e => logout(e)} className="bg-indigo-500 p-2 m-1 rounded-md">Logodutd </button>
         </div>

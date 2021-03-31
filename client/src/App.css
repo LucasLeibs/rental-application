@@ -41,8 +41,9 @@
   width: 700px;
   height: 60px;
   border-radius: 2rem;
-  border: 1px solid black;
-  padding: 10px;
+  border:none;
+  padding: 20px;
+ 
 }
 .location-search-input:focus {
   width: 700px;
