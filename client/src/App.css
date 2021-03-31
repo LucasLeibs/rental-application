@@ -53,4 +53,14 @@
   padding: 10px;
   outline: none;
 }
-
+.autocomplete-dropdown-container {
+  padding-top: 10px;
+  
+  
+}
+.suggestion-item {
+  padding: 5px;
+}
+.suggestion-item--active {
+  padding: 5px;
+}

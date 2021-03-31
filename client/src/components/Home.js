@@ -84,7 +84,7 @@ pauseOnHover={false}
 
       </SearchBar>
       </div>
-<div className="w-3/4">
+<div className="w-100 h-1/3">
 <img src={home}></img>
 </div>
 
