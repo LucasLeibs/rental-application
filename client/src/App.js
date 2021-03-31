@@ -8,9 +8,9 @@ import Login from './components/Login'
 import Register from './components/Register'
 import {default as Switchy} from "react-switch"
 import useDarkMode from './hooks/useDarkMode'
+import store from './store/GlobalStore'
 
-
-function App() {
+function App({store}) {
 // const [colorTheme, setTheme] = useDarkMode()
 const [isAuthenticated, setIsAuthenticated] = useState(false)
 const [checked, setChecked] = useState(false);
@@ -132,9 +132,9 @@ const handleChange = () => {
          </Switchy>
          </div>
        <Switch>
-         <Route exact path="/login" render={props => !isAuthenticated ? <Login {...props} setAuth={setAuth} /> : <Redirect to="/home"/>} />
-         <Route exact path="/register" render={props => !isAuthenticated ? <Register {...props} setAuth={setAuth} /> : <Redirect to="/login"/>} />
-         <Route exact path="/home" render={props => isAuthenticated ? <Home {...props} setAuth={setAuth} /> : <Redirect to="/login"/>} />
+         <Route exact path="/login" render={props =>  <Login {...props} setAuth={setAuth} /> } />
+         <Route exact path="/register" render={props =>  <Register {...props} setAuth={setAuth} /> } />
+         <Route exact path="/home" render={props =>  <Home {...props} setAuth={setAuth} /> } />
        </Switch>
        </div>
  

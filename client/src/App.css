@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.location-search-input {
+  width: 700px;
+  height: 60px;
+  border-radius: 2rem;
+  border: 1px solid black;
+  padding: 10px;
+}
+.location-search-input:focus {
+  width: 700px;
+  height: 60px;
+  border-radius: 2rem;
+  border: 1px solid black;
+  padding: 10px;
+  outline: none;
+}
+
