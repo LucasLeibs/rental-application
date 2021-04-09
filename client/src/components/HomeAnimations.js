@@ -47,7 +47,8 @@ export default function HomeAnimations() {
           <h1 className="mb-4 text-indigo-600 font-extrabold text-7xl">
             Better Together
           </h1>
-          <p className="w-8/12">Join a community dedicated to making the rental process more transparent, enjoybale, and educated</p>
+          <p className="w-8/12">Join a community helping create a transparent, enjoybale, and educated rental process.</p>
+          <button className="bg-indigo-600 p-2 m-1 rounded-md text-white">Sign Up</button>
         </article>
         <Bounce fraction={0.01} delay={0} when={third} left>
           <img className="w-3/12" src={community}></img>
