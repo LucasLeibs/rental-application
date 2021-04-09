@@ -8,7 +8,7 @@ export default function HomeAnimations() {
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
   return (
-    <div className="w-100 flex items-center flex-col justify-center">
+    <div className=" relative w-100 flex items-center flex-col justify-center">
       <div
         onMouseEnter={() => setFirst(true)}
         className=" m-4 flex items-center flex-row justify-center"
@@ -34,7 +34,7 @@ export default function HomeAnimations() {
           <h1 className="text-indigo-600 font-extrabold text-7xl">
             Review Your Rental
           </h1>
-          {/* <p onMouseEnter={() => setThird(true)}><br></br></p> */}
+          <p onMouseEnter={() => setThird(true)}>Leave Honst </p>
         </article>
       </div>
 
@@ -51,6 +51,7 @@ export default function HomeAnimations() {
           <img className="w-3/12" src={community}></img>
         </Bounce>
       </div>
+      <footer className="mt-4 absolute bottom-0 h-1/12">hey</footer>
     </div>
   );
 }

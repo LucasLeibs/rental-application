@@ -64,7 +64,7 @@ export default function Home({setAuth}) {
     return (
         <div className="static min-h-screen flex items-center flex-col justify-center bg-none
          px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:text-white" >
-            {/* <ToastContainer
+            <ToastContainer
 position="top-center"
 autoClose={5000}
 hideProgressBar={false}
@@ -91,11 +91,12 @@ pauseOnHover={false}
 
 
        
-            <h1>Homfe Pidiage</h1>
+            {/* <h1>Homfe Pidiage</h1>
             <button onClick= {e => logout(e)} className="bg-indigo-500 p-2 m-1 rounded-md">Logodutd </button> */}
             <HomeAnimations>
 
             </HomeAnimations>
+           
         </div>
     )
 }
