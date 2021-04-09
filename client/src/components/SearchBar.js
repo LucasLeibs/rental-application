@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PlacesAutocomplete from 'react-places-autocomplete';
+import {BrowserRouter as Router, Switch, Route, Redirect, Link} from "react-router-dom"
 import {
     geocodeByAddress,
     geocodeByPlaceId,
     getLatLng,
   } from 'react-places-autocomplete';
-  
+
 export default class SearchBar extends Component {
     constructor(props) {
         super(props);
@@ -17,10 +18,7 @@ export default class SearchBar extends Component {
       };
      
       handleSelect = address => {
-        geocodeByAddress(address)
-          .then(results => getLatLng(results[0]))
-          .then(latLng => console.log('Success', latLng))
-          .catch(error => console.error('Error', error));
+        
       };
     render() {
         return (
