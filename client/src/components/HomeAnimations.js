@@ -17,6 +17,7 @@ export default function HomeAnimations() {
           <h1 className="text-indigo-600 font-extrabold text-7xl">
             True Insights
           </h1>
+          <p></p>
         </article>
         <Bounce fraction={0.01} delay={0} when={first} left>
           <img className="w-3/12" src={homeCheck}></img>
@@ -34,7 +35,7 @@ export default function HomeAnimations() {
           <h1 className="text-indigo-600 font-extrabold text-7xl">
             Review Your Rental
           </h1>
-          <p onMouseEnter={() => setThird(true)}>Leave Honst </p>
+          <p onMouseEnter={() => setThird(true)}>Renttru gives renters a voice in their renting expereince. Leave a review on the price, management company, the landlord etc...</p>
         </article>
       </div>
 
