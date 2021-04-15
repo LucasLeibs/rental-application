@@ -17,7 +17,7 @@ export default function HomeAnimations() {
           <h1 className="mb-4 text-indigo-600 font-extrabold text-7xl">
             True Insights
           </h1>
-          <p className="w-8/12">Looking to sign a lease at a rental property? Read reviews from previous tenants to get the inside scoop on the property.</p>
+          <p className="w-8/12">Looking to sign a lease at a rental property? Read reviews from previous tenants to get the inside scoop.</p>
         </article>
         <Bounce fraction={0.01} delay={0} when={first} left>
           <img className="w-3/12" src={homeCheck}></img>
@@ -54,7 +54,7 @@ export default function HomeAnimations() {
           <img className="w-3/12" src={community}></img>
         </Bounce>
       </div>
-      <footer className="mt-4 absolute bottom-0 h-1/12">hey</footer>
+     
     </div>
   );
 }
