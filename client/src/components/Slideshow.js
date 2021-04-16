@@ -21,13 +21,19 @@ export default function Slideshow() {
     }
   };
   return (
-    <div className="mt-20 relative w-6/12 flex items-center flex-col justify-center">
+    <div className="mt-10 relative w-6/12 flex items-center flex-col justify-center">
       <div className="w-100 flex items-center flex-col justify-center">
         <img className="w-100" src={images[currentImage]}></img>
       </div>
-      <div>
-      <button className="bg-indigo-600 p-2 m-1 rounded-md text-white" onClick={() => next()}>Next</button>
-        <button className="bg-indigo-600 p-2 m-1 rounded-md text-white" onClick={() => back()}>Back</button>
+      <div className="flex items-center flex-col justify-center">
+          <span>
+      <button className="bg-indigo-600 p-2 m-1 rounded-md text-white" onClick={() => back()}><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+</svg></button>
+        <button className="bg-indigo-600 p-2 m-1 rounded-md text-white" onClick={() => next()}><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+</svg></button>
+</span>
         <p>{currentImage + 1} / {images.length}</p>
       </div>
     </div>
