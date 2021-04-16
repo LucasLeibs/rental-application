@@ -65,7 +65,7 @@ export default function Home({setAuth}) {
     return (
         <div className="static min-h-screen flex items-center flex-col justify-center bg-none
          px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:text-white" >
-            {/* <ToastContainer
+            <ToastContainer
 position="top-center"
 autoClose={5000}
 hideProgressBar={false}
@@ -95,8 +95,8 @@ pauseOnHover={false}
           
             <HomeAnimations>
 
-            </HomeAnimations> */}
-            <Slideshow></Slideshow>
+            </HomeAnimations>
+            {/* <Slideshow></Slideshow> */}
            
         </div>
     )

@@ -133,7 +133,7 @@ const handleChange = () => {
          </div>
        <Switch>
          <Route exact path="/login" render={props =>  <Login {...props} setAuth={setAuth} /> } />
-         <Route exact path="/register" render={props =>  <Register {...props} setAuth={setAuth} /> } />
+         <Route exact path="/register" render={props => isAuthenticated ? <Redirect to='/home'/> : <Register {...props} setAuth={setAuth} /> } />
          <Route exact path="/home" render={props =>  <Home {...props} setAuth={setAuth} /> } />
 
        </Switch>

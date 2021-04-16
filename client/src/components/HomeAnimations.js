@@ -3,6 +3,7 @@ import Bounce from "react-reveal/Bounce";
 import homeCheck from "../images/house-check.png";
 import createReview from "../images/holding-the-phone.png";
 import community from "../images/community.png";
+import {Link} from 'react-router-dom'
 export default function HomeAnimations() {
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -48,7 +49,7 @@ export default function HomeAnimations() {
             Better Together
           </h1>
           <p className="w-8/12">Join a community helping create a transparent, enjoybale, and educated rental process.</p>
-          <button className="bg-indigo-600 p-2 m-1 rounded-md text-white">Sign Up</button>
+          <Link to="/register"><button className="bg-indigo-600 p-2 m-1 rounded-md text-white">Sign Up</button></Link>
         </article>
         <Bounce fraction={0.01} delay={0} when={third} left>
           <img className="w-3/12" src={community}></img>
