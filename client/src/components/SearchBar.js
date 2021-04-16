@@ -53,7 +53,7 @@ export default class SearchBar extends Component {
                       style,
                     })}
                   >
-                    <span>{suggestion.description}</span>
+                    <Link to='/review'><span>{suggestion.description}</span></Link>
                   </div>
                 );
               })}

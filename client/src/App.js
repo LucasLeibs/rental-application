@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
+import Review from '/components/Review'
 import {default as Switchy} from "react-switch"
 import useDarkMode from './hooks/useDarkMode'
 import store from './store/GlobalStore'
