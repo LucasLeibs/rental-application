@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
-import Review from '/components/Review'
+import Review from './components/Review'
 import {default as Switchy} from "react-switch"
 import useDarkMode from './hooks/useDarkMode'
 import store from './store/GlobalStore'
@@ -136,6 +136,7 @@ const handleChange = () => {
          <Route exact path="/login" render={props =>  <Login {...props} setAuth={setAuth} /> } />
          <Route exact path="/register" render={props => isAuthenticated ? <Redirect to='/home'/> : <Register {...props} setAuth={setAuth} /> } />
          <Route exact path="/home" render={props =>  <Home {...props} setAuth={setAuth} /> } />
+         <Route exact path="/review" render={props =>  <Review {...props} setAuth={setAuth} /> } />
 
        </Switch>
        </div>
